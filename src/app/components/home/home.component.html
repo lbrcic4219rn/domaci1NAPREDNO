@@ -1,0 +1,6 @@
+<p>HOME PAGE</p>
+<form (ngSubmit)="onSubmit()" #form="ngForm">
+    <input type="text" [(ngModel)]="token" name="token" id="token" required>
+    <button type="submit" [disabled]="!form.valid"> Submit </button>
+</form>
+<p>saved Token {{ localToken }}</p>

@@ -1,0 +1,23 @@
+<p>Entity Extraction</p>
+<form (ngSubmit)="onSubmit()">
+  <label>Text 1</label>
+  <br>
+  <textarea
+    name="text"
+    type="text"
+    required
+    [(ngModel)]="entityModel.text1"
+  ></textarea>
+  <br>
+  <label>Text 2</label>
+  <br>
+  <textarea
+    name="text"
+    type="text"
+    required
+    [(ngModel)]="entityModel.text2"
+  ></textarea>
+  <br>
+  <button type="submit">Submit</button>
+  <p>result: {{ result }}</p>
+</form>

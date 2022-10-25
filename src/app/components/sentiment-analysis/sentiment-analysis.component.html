@@ -1,0 +1,37 @@
+<p>Sentiment Analysis</p>
+<form (ngSubmit)="onSubmit()">
+  <label>Text</label>
+  <br>
+  <textarea
+    name="text"
+    type="text"
+    required
+    [(ngModel)]="entityModel.text"
+  ></textarea>
+  <br>
+  <label>Language</label>
+  <select class="form-select" (change)="handleChange($event)">
+    <option *ngFor="let option of options" [value]="option.id">
+      {{ option.name }}
+    </option>
+  </select>
+  <br>
+  <button type="submit">Submit</button>
+</form>
+
+<h3 class="text-center">Sentiment Analysis Result:</h3>
+<h1
+  class="text-center"
+  [ngStyle]="{
+          'background-color':
+            'rgb(' +
+            this.sentimentColor.r +
+            ', ' +
+            this.sentimentColor.g +
+            ', ' +
+            this.sentimentColor.b +
+            ')'
+        }"
+>
+  {{ sentiment.score }} - {{ sentiment.type }}
+</h1>

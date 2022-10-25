@@ -1,0 +1,6 @@
+<ul>
+  <li *ngFor="let log of historyService.log" class="text-break">
+    [{{ log.timestamp | date: "d.M.yyyy, h:mm:ss" }}] GET
+    {{ log.endpoint }}
+  </li>
+</ul>

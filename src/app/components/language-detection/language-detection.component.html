@@ -1,0 +1,24 @@
+<p>Language Detection</p>
+<form (ngSubmit)="onSubmit()">
+  <label>Text</label>
+  <br>
+  <textarea
+    name="text"
+    type="text"
+    required
+    [(ngModel)]="entityModel.text"
+  ></textarea>
+  <br>
+  <input
+    type="checkbox"
+    name="image"
+    value="image"
+    (change)="handleCleanCheck($event)"
+  />
+  <label>Clean</label>
+  <br>
+  <button type="submit">Submit</button>
+</form>
+<div *ngFor="let lang of detectedLanguages">
+  <p>Language: {{ lang.lang }} - Confidence: {{ lang.confidence }}</p>
+</div>
